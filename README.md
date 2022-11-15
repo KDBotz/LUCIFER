@@ -10,6 +10,8 @@
 ![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=KD_BOTZ+MOVIE+SEARCH+BOT+!;CREATED+BY+KD_BOTZ+TEAM!;A+ADVANCE+BOT+WITH+COOL+FEATURES!)
 </p>
 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/kdbotz/LUCIFER)
+
 ## Credits 
 * [![EvaMaria-Devs](https://img.shields.io/static/v1?label=EvaMaria&message=devs&color=critical)](https://telegram.dog/EvaMariaDevs)
 * [![Kunal](https://img.shields.io/static/v1?label=Kunal&message=Github&color=critical)](https://github.com/kdbotz)
