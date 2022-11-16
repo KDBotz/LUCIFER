@@ -407,7 +407,7 @@ async def delete_all_index_confirm(bot, message):
 async def settings(client, message):
     userid = message.from_user.id if message.from_user else None
     if not userid:
-        return await message.reply(f"**Yᴏᴜʀ Aʀᴇ Aɴᴏɴʏᴍᴏᴜs Aᴅᴍɪɴ. Usᴇ `/connect {message.chat.id}` Iɴ PM**")
+        return await message.reply(f"**Yᴏᴜʀ Aʀᴇ Aɴᴏɴʏᴍᴏᴜs Aᴅᴍɪɴ. Usᴇ /settings Iɴ PM**")
     chat_type = message.chat.type
 
     if chat_type == enums.ChatType.PRIVATE:
@@ -570,7 +570,7 @@ async def save_template(client, message):
     sts = await message.reply("**Cʜᴇᴄᴋɪɴɢ Tᴇᴍᴘʟᴀᴛᴇ....**")
     userid = message.from_user.id if message.from_user else None
     if not userid:
-        return await message.reply(f"**Yᴏᴜʀ Aʀᴇ Aɴᴏɴʏᴍᴏᴜs Aᴅᴍɪɴ. Usᴇ `/connect {message.chat.id}` Iɴ PM**")
+        return await message.reply(f"**Yᴏᴜʀ Aʀᴇ Aɴᴏɴʏᴍᴏᴜs Aᴅᴍɪɴ. Usᴇ /set_template Iɴ PM**")
     chat_type = message.chat.type
 
     if chat_type == enums.ChatType.PRIVATE:
