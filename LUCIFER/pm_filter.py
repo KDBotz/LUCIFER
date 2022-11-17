@@ -9,7 +9,7 @@ import pyrogram
 from database.connections_mdb import active_connection, all_connections, delete_connection, if_active, make_active, \
     make_inactive
 from info import ADMINS, AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, MSG_ALRT, AUTH_GROUPS, P_TTI_SHOW_OFF, GRP_LNK, CHNL_LNK, NOR_IMG, SPELL_IMG, IMDB, \
-    SINGLE_BUTTON, SPELL_CHECK_REPLY, IMDB_TEMPLATE, SUPPORT_GROUP, SUPPORT_CHAT
+    SINGLE_BUTTON, SPELL_CHECK_REPLY, IMDB_TEMPLATE, SUPPORT_GROUP, SUPPORT_CHAT, FILE_CHANNEL_LINK, FILE_CHANNEL
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram import Client, filters, enums
 from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerIdInvalid
@@ -418,10 +418,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
                 return
             else:
-                await client.send_cached_media(
-                    chat_id=query.from_user.id,
+                mh = await client.send_cached_media(
+                    chat_id=FILE_CHANNEL,
                     file_id=file_id,
-                    caption=f_caption,
+                    caption=script.FILE_CHANNEL_TXT.format(title, size, query.from_user.mention, query.message.chat.title),
                     protect_content=True if ident == "filep" else False,
                     reply_markup=InlineKeyboardMarkup(
                         [
@@ -432,21 +432,27 @@ async def cb_handler(client: Client, query: CallbackQuery):
                          ]
                     )
                 )
-                kdr = await query.message.reply(script.FILES_PM_TXT.format(files.file_name, query.from_user.mention),
-                    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("⚡Vɪᴇᴡ Fɪʟᴇs Iɴ PM⚡", url=f"https://t.me/{temp.U_NAME}")]])
+                mh8 = await query.message.reply(script.FILE_READY_TXT.format(query.from_user.mention, title, size),
+                True,
+                enums.ParseMode.HTML,
+                disable_web_page_preview=True,
+                reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton("📥  ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ  📥", url=f"{mh.link}")
+                        ],
+                        [
+                            InlineKeyboardButton("⚠️ ᴄᴀɴɴᴏᴛ ᴀᴄᴄᴇss ❓ ᴄʟɪᴄᴋ ʜᴇʀᴇ ⚠️", url=f"{FILE_CHANNEL_LINK}")
+                        ]
+                    ]
                 )
-                await asyncio.sleep(20)
-                await kdr.delete()
-        except UserIsBlocked:
-            rdr = await query.message.reply(script.NO_START_TXT.format(query.from_user.mention),
-                    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("⚡Cʟɪᴄᴋ Hᴇʀᴇ Tᴏ Sᴛᴀʀᴛ Mᴇ⚡", url=f"https://t.me/{temp.U_NAME}")]])
-                )
-            await asyncio.sleep(20)
-            await rdr.delete()
-        except PeerIdInvalid:
-            await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
+            )
+            await asyncio.sleep(600)
+            await mh8.delete()            
+            await mh.delete()
+            del mh8, mh
         except Exception as e:
-            await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
+            logger.exception(e, exc_info=True)
                 
     elif query.data.startswith("checksub"):
         if AUTH_CHANNEL and not await is_subscribed(client, query):
