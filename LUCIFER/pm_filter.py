@@ -1006,6 +1006,7 @@ async def auto_filter(client, msg, spoll=False):
     if imdb:
         cap = TEMPLATE.format(
             query=search,
+            mention=message.from_user.mention if message.from_user else message.chat.title,
             title=imdb['title'],
             votes=imdb['votes'],
             aka=imdb["aka"],
@@ -1038,17 +1039,17 @@ async def auto_filter(client, msg, spoll=False):
     else:
         try:
             if settings['auto_delete']:
-                cap = f"<b>Yᴏᴜʀ Qᴜᴇʀʏ ☞ <code>{search}</code></b>\n\n<b>‣ Tʜɪs Mᴇssᴀɢᴇ Wɪʟʟ ʙᴇ Aᴜᴛᴏ-Dᴇʟᴇᴛᴇᴅ Aғᴛᴇʀ 𝟷𝟶 Mɪɴᴜᴛᴇs.</b>"
+                cap = script.CAP_DLT_TXT.format(message.from_user.mention if message.from_user else message.chat.title, search)
             else:
-                cap = f"<b>Yᴏᴜʀ Qᴜᴇʀʏ ☞ <code>{search}</code></b>\n\n<u><b>Hᴇʏ Cʟɪᴄᴋ Oɴ Tʜᴇ Bᴜᴛᴛᴏɴ Bᴇʟᴏᴡ Tʜᴇ Fɪʟᴇs Yᴏᴜ Wᴀɴᴛ Aɴᴅ Sᴛᴀʀᴛ Tʜᴇ Bᴏᴛ.</b></u>"
+                cap = script.CAP_TXT.format(message.from_user.mention if message.from_user else message.chat.title, search)
         except KeyError:
             grpid = await active_connection(str(message.from_user.id))
             await save_group_settings(grpid, 'auto_delete', True)
             settings = await get_settings(message.chat.id)
             if settings['auto_delete']:
-                cap = f"<b>Yᴏᴜʀ Qᴜᴇʀʏ ☞ <code>{search}</code></b>\n\n<b>‣ Tʜɪs Mᴇssᴀɢᴇ Wɪʟʟ ʙᴇ Aᴜᴛᴏ-Dᴇʟᴇᴛᴇᴅ Aғᴛᴇʀ 𝟷𝟶 Mɪɴᴜᴛᴇs.</b>"
+                cap = script.CAP_DLT_TXT.format(message.from_user.mention if message.from_user else message.chat.title, search)
             else:
-                cap = f"<b>Yᴏᴜʀ Qᴜᴇʀʏ ☞ <code>{search}</code></b>\n\n<u><b>Hᴇʏ Cʟɪᴄᴋ Oɴ Tʜᴇ Bᴜᴛᴛᴏɴ Bᴇʟᴏᴡ Tʜᴇ Fɪʟᴇs Yᴏᴜ Wᴀɴᴛ Aɴᴅ Sᴛᴀʀᴛ Tʜᴇ Bᴏᴛ.</b></u>"
+                cap = script.CAP_TXT.format(message.from_user.mention if message.from_user else message.chat.title, search)
     if imdb and imdb.get('poster'):
         try:
             if settings['auto_delete']:
