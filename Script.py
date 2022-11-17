@@ -429,3 +429,13 @@ Fʀᴏᴍ Nᴏᴡ Oɴ, I Wɪʟʟ Gɪᴠᴇ Yᴏᴜ Fɪʟᴇs Iɴ PM Oɴʟʏ !!</
 
 <u><b>Hᴇʏ Cʟɪᴄᴋ Oɴ Tʜᴇ Bᴜᴛᴛᴏɴ Bᴇʟᴏᴡ Tʜᴇ Fɪʟᴇs Yᴏᴜ Wᴀɴᴛ Aɴᴅ Sᴛᴀʀᴛ Tʜᴇ Bᴏᴛ.</b></u>
 """
+
+    FILE_CHANNEL_TXT = """
+
+    FILE_READY_TXT = """
+<b>Hᴇʏ {} 
+📫 Yᴏᴜʀ Fɪʟᴇ Is Rᴇᴀᴅʏ
+
+📂 Fɪʟᴇ Nᴀᴍᴇ :- <code>{}</code>
+
+⚙️ Fɪʟᴇ Sɪᴢᴇ :- {}</b>"""
