@@ -432,6 +432,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
                          ]
                     )
                 )
+                await asyncio.sleep(20)
+                await mh.delete()
+                del mh
                 mh8 = await query.message.reply(script.FILE_READY_TXT.format(query.from_user.mention, title, size),
                 True,
                 enums.ParseMode.HTML,
@@ -448,9 +451,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 )
             )
             await asyncio.sleep(600)
-            await mh8.delete()            
-            await mh.delete()
-            del mh8, mh
+            await mh8.delete()
+            del mh8
         except Exception as e:
             logger.exception(e, exc_info=True)
                 
