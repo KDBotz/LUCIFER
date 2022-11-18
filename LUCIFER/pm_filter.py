@@ -1063,7 +1063,7 @@ async def auto_filter(client, msg, spoll=False):
     if imdb and imdb.get('poster'):
         try:
             if settings['auto_delete']:
-                hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024] += "\n\n<b>‣ Tʜɪs Mᴇssᴀɢᴇ Wɪʟʟ ʙᴇ Aᴜᴛᴏ-Dᴇʟᴇᴛᴇᴅ Aғᴛᴇʀ 𝟷𝟶 Mɪɴᴜᴛᴇs.</b>", reply_markup=InlineKeyboardMarkup(btn))
+                hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024] + "\n\n<b>‣ Tʜɪs Mᴇssᴀɢᴇ Wɪʟʟ ʙᴇ Aᴜᴛᴏ-Dᴇʟᴇᴛᴇᴅ Aғᴛᴇʀ 𝟷𝟶 Mɪɴᴜᴛᴇs.</b>", reply_markup=InlineKeyboardMarkup(btn))
                 await asyncio.sleep(600)
                 await hehe.delete()
                 await message.delete()
@@ -1074,7 +1074,7 @@ async def auto_filter(client, msg, spoll=False):
             await save_group_settings(grpid, 'auto_delete', True)
             settings = await get_settings(message.chat.id)
             if settings['auto_delete']:
-                hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024] += "\n\n<b>‣ Tʜɪs Mᴇssᴀɢᴇ Wɪʟʟ ʙᴇ Aᴜᴛᴏ-Dᴇʟᴇᴛᴇᴅ Aғᴛᴇʀ 𝟷𝟶 Mɪɴᴜᴛᴇs.</b>", reply_markup=InlineKeyboardMarkup(btn))
+                hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024] + "\n\n<b>‣ Tʜɪs Mᴇssᴀɢᴇ Wɪʟʟ ʙᴇ Aᴜᴛᴏ-Dᴇʟᴇᴛᴇᴅ Aғᴛᴇʀ 𝟷𝟶 Mɪɴᴜᴛᴇs.</b>", reply_markup=InlineKeyboardMarkup(btn))
                 await asyncio.sleep(600)
                 await hehe.delete()
                 await message.delete()
@@ -1085,7 +1085,7 @@ async def auto_filter(client, msg, spoll=False):
             poster = pic.replace('.jpg', "._V1_UX360.jpg")
             try:
                 if settings['auto_delete']:
-                    hmm = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024] += "\n\n<b>‣ Tʜɪs Mᴇssᴀɢᴇ Wɪʟʟ ʙᴇ Aᴜᴛᴏ-Dᴇʟᴇᴛᴇᴅ Aғᴛᴇʀ 𝟷𝟶 Mɪɴᴜᴛᴇs.</b>", reply_markup=InlineKeyboardMarkup(btn))
+                    hmm = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024] + "\n\n<b>‣ Tʜɪs Mᴇssᴀɢᴇ Wɪʟʟ ʙᴇ Aᴜᴛᴏ-Dᴇʟᴇᴛᴇᴅ Aғᴛᴇʀ 𝟷𝟶 Mɪɴᴜᴛᴇs.</b>", reply_markup=InlineKeyboardMarkup(btn))
                     await asyncio.sleep(600)
                     await hmm.delete()
                     await message.delete()
@@ -1096,7 +1096,7 @@ async def auto_filter(client, msg, spoll=False):
                 await save_group_settings(grpid, 'auto_delete', True)
                 settings = await get_settings(message.chat.id)
                 if settings['auto_delete']:
-                    hmm = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024] += "\n\n<b>‣ Tʜɪs Mᴇssᴀɢᴇ Wɪʟʟ ʙᴇ Aᴜᴛᴏ-Dᴇʟᴇᴛᴇᴅ Aғᴛᴇʀ 𝟷𝟶 Mɪɴᴜᴛᴇs.</b>", reply_markup=InlineKeyboardMarkup(btn))
+                    hmm = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024] + "\n\n<b>‣ Tʜɪs Mᴇssᴀɢᴇ Wɪʟʟ ʙᴇ Aᴜᴛᴏ-Dᴇʟᴇᴛᴇᴅ Aғᴛᴇʀ 𝟷𝟶 Mɪɴᴜᴛᴇs.</b>", reply_markup=InlineKeyboardMarkup(btn))
                     await asyncio.sleep(600)
                     await hmm.delete()
                     await message.delete()
