@@ -50,7 +50,7 @@ class Bot(Client):
         time = curr.strftime('%I:%M:%S %p')
         logging.info(f"{me.first_name} with for Pyrogram v{__version__} (Layer {layer}) started on {me.username}.")
         logging.info(LOG_STR)
-        await self.send_message(LOG_CHANNEL, textf="<b>Bᴏᴛ Rᴇsᴛᴀʀᴛᴇᴅ !!\n\nDᴀᴛᴇ : <code>{date}</code>\nTɪᴍᴇ : <code>{time}</code>\nVᴇʀsɪᴏɴ : <code>v{__version__} [{layer}]</code></b>")
+        await self.send_message(LOG_CHANNEL, text=f"<b>Bᴏᴛ Rᴇsᴛᴀʀᴛᴇᴅ !!\n\nDᴀᴛᴇ : <code>{date}</code>\nTɪᴍᴇ : <code>{time}</code>\nVᴇʀsɪᴏɴ : <code>v{__version__} [{layer}]</code></b>")
 
     async def stop(self, *args):
         await super().stop()
