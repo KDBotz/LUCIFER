@@ -20,9 +20,9 @@ async def app_restart():
 async def restarts(client, message):
     if HEROKU_API_KEY:
         kd = await message.reply_text("Trying to restart...")
-        await app_restart()
         await kd.edit("Please Wait Restarting....")
         await asyncio.sleep(3.5)
         await kd.delete()
+        await app_restart()
     else:
         await message.reply_text("Api key not found!")
