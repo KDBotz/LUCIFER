@@ -11,12 +11,11 @@ from pyrogram import Client, __version__
 from pyrogram.raw.all import layer
 from database.ia_filterdb import Media
 from database.users_chats_db import db
-from info import SESSION, API_ID, API_HASH, BOT_TOKEN, LOG_STR, LOG_CHANNEL #, ADMINS
+from info import SESSION, API_ID, API_HASH, BOT_TOKEN, LOG_STR, LOG_CHANNEL, ADMINS
 from utils import temp
 from typing import Union, Optional, AsyncGenerator
 from pyrogram import types
 
-#START_LOG = ADMINS if LOG_CHANNEL is None else LOG_CHANNEL
 class Bot(Client):
 
     def __init__(self):
@@ -41,9 +40,10 @@ class Bot(Client):
         temp.U_NAME = me.username
         temp.B_NAME = me.first_name
         self.username = '@' + me.username
+        start_log = ADMINS if LOG_CHANNEL is None else LOG_CHANNEL
         logging.info(f"{me.first_name} with for Pyrogram v{__version__} (Layer {layer}) started on {me.username}.")
         logging.info(LOG_STR)
-        await self.send_message(chat_id=LOG_CHANNEL, text="<b>Bot Restarted !</b>")
+        await self.send_message(chat_id=start_log, text="<b>Bot Restarted !</b>")
 
     async def stop(self, *args):
         await super().stop()
