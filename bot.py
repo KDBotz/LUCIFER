@@ -42,11 +42,7 @@ class Bot(Client):
         self.username = '@' + me.username
         logging.info(f"{me.first_name} with for Pyrogram v{__version__} (Layer {layer}) started on {me.username}.")
         logging.info(LOG_STR)
-        try:
-            if LOG_CHANNEL:
-                await self.send_message(chat_id=LOG_CHANNEL, text="<b>Bot Restarted !</b>")
-            else:
-                await self.send_message(chat_id=self.chat.id, text="<b>Bot Restarted !</b>")
+        await self.send_message(chat_id=LOG_CHANNEL, text="<b>Bot Restarted !</b>")
 
     async def stop(self, *args):
         await super().stop()
