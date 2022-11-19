@@ -1,3 +1,5 @@
+import os
+import math
 import logging
 import logging.config
 
@@ -7,6 +9,8 @@ logging.getLogger().setLevel(logging.INFO)
 logging.getLogger("pyrogram").setLevel(logging.ERROR)
 logging.getLogger("imdbpy").setLevel(logging.ERROR)
 
+from datetime import datetime
+from pytz import timezone
 from pyrogram import Client, __version__
 from pyrogram.raw.all import layer
 from database.ia_filterdb import Media
@@ -15,6 +19,7 @@ from info import SESSION, API_ID, API_HASH, BOT_TOKEN, LOG_STR, LOG_CHANNEL
 from utils import temp
 from typing import Union, Optional, AsyncGenerator
 from pyrogram import types
+TIMEZONE = (os.environ.get("TIMEZONE", "Asia/Kolkata"))
 
 class Bot(Client):
 
@@ -40,9 +45,12 @@ class Bot(Client):
         temp.U_NAME = me.username
         temp.B_NAME = me.first_name
         self.username = '@' + me.username
+        curr = datetime.now(timezone(TIMEZONE))
+        date = curr.strftime('%d %B, %Y')
+        time = curr.strftime('%I:%M:%S %p')
         logging.info(f"{me.first_name} with for Pyrogram v{__version__} (Layer {layer}) started on {me.username}.")
         logging.info(LOG_STR)
-        await self.send_message(LOG_CHANNEL, text="<b>Bᴏᴛ Rᴇsᴛᴀʀᴛᴇᴅ !!</b>")
+        await self.send_message(LOG_CHANNEL, textf="<b>Bᴏᴛ Rᴇsᴛᴀʀᴛᴇᴅ !!\n\nDᴀᴛᴇ : <code>{date}</code>\nTɪᴍᴇ : <code>{time}</code>\nVᴇʀsɪᴏɴ : <code>v{__version__} [{layer}]</code></b>")
 
     async def stop(self, *args):
         await super().stop()
