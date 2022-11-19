@@ -1,3 +1,4 @@
+import asyncio
 import heroku3
 import os
 from pyrogram import Client, filters, enums
@@ -18,8 +19,10 @@ async def app_restart():
 @Client.on_message(filters.command("restart") & filters.user(ADMINS))
 async def restarts(client, message):
     if HEROKU_API_KEY:
-        kd = await message.reply_text("Trying to restart")
+        kd = await message.reply_text("Trying to restart...")
         await app_restart()
-        await kd.edit("Please Wait Restarting")
+        await kd.edit("Please Wait Restarting....")
+        await asyncio.sleep(3.5)
+        await kd.delete()
     else:
         await message.reply_text("Api key not found!")
