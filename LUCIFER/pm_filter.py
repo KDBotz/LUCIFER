@@ -1237,6 +1237,7 @@ async def manual_filters(client, message, text=False):
                                 group_id, 
                                 reply_text, 
                                 disable_web_page_preview=True,
+                                protect_content=True if settings["file_secure"] else False,
                                 reply_to_message_id=reply_id
                             )
                             try:
@@ -1269,6 +1270,7 @@ async def manual_filters(client, message, text=False):
                                 reply_text,
                                 disable_web_page_preview=True,
                                 reply_markup=InlineKeyboardMarkup(button),
+                                protect_content=True if settings["file_secure"] else False,
                                 reply_to_message_id=reply_id
                             )
                             try:
@@ -1299,6 +1301,7 @@ async def manual_filters(client, message, text=False):
                             group_id,
                             fileid,
                             caption=reply_text or "",
+                            protect_content=True if settings["file_secure"] else False,
                             reply_to_message_id=reply_id
                         )
                         try:
