@@ -9,6 +9,7 @@ logging.getLogger().setLevel(logging.INFO)
 logging.getLogger("pyrogram").setLevel(logging.ERROR)
 logging.getLogger("imdbpy").setLevel(logging.ERROR)
 
+from pyrogram.errors import BadRequest, Unauthorized
 from datetime import datetime
 from pytz import timezone
 from pyrogram import Client, __version__
@@ -19,6 +20,7 @@ from info import SESSION, API_ID, API_HASH, BOT_TOKEN, LOG_STR, LOG_CHANNEL
 from utils import temp
 from typing import Union, Optional, AsyncGenerator
 from pyrogram import types
+LOGGER = logging.getLogger(__name__)
 TIMEZONE = (os.environ.get("TIMEZONE", "Asia/Kolkata"))
 
 class Bot(Client):
@@ -50,7 +52,13 @@ class Bot(Client):
         time = curr.strftime('%I:%M:%S %p')
         logging.info(f"{me.first_name} with for Pyrogram v{__version__} (Layer {layer}) started on {me.username}.")
         logging.info(LOG_STR)
-        await self.send_message(LOG_CHANNEL, text=f"<b>Bᴏᴛ Rᴇsᴛᴀʀᴛᴇᴅ !!\n\n📅 Dᴀᴛᴇ : <code>{date}</code>\n⏰Tɪᴍᴇ : <code>{time}</code>\n🌐 Tɪᴍᴇᴢᴏɴᴇ : <code>{TIMEZONE}</code>\n\n🉐 Vᴇʀsɪᴏɴ : <code>v{__version__}</code></b>")
+        if LOG_CHANNEL:
+            try:
+                await self.send_message(LOG_CHANNEL, text=f"<b>Bᴏᴛ Rᴇsᴛᴀʀᴛᴇᴅ !!\n\n📅 Dᴀᴛᴇ : <code>{date}</code>\n⏰ Tɪᴍᴇ : <code>{time}</code>\n🌐 Tɪᴍᴇᴢᴏɴᴇ : <code>{TIMEZONE}</code>\n\n🉐 Vᴇʀsɪᴏɴ : <code>v{__version__}</code></b>")
+            except Unauthorized:
+                LOGGER.warning("Bot isn't able to send message to LOG_CHANNEL")
+            except BadRequest as e:
+                LOGGER.error(e)
 
     async def stop(self, *args):
         await super().stop()
