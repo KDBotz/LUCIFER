@@ -34,6 +34,22 @@
             "description": "Username or ID of channel or group. Separate multiple IDs by space.",
             "required": false
         },
+        "SUPPORT_GROUP": {
+            "description": "Support Group Chat ID",
+            "required": true
+        },
+        "RQST_LOG_CHANNEL": {
+            "description": "request log channel ID",
+            "required": true
+        },
+        "FILE_CHANNEL": {
+            "description": "File Channel Id",
+            "required": true
+        },
+        "FILE_CHANNEL_LINK": {
+            "description": "File Channel Link",
+            "required": true
+        },
         "ADMINS": {
             "description": "Username or ID of Admin. Separate multiple Admins by space.",
             "required": true
