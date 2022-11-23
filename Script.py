@@ -9,7 +9,7 @@ class script(object):
 
 Hᴇʀᴇ Is Tʜᴇ Hᴇʟᴘ Fᴏʀ Mʏ Cᴏᴍᴍᴀɴᴅs.</b>"""
 
-    ABOUT_TXT = """<b>✯ Mʏ Nᴀᴍᴇ : <a href=https://t.me/FILTER_LUCIFER_BOT>˹𝖣ᴇᴠɪʟ 𝖫ᴜᴄɪғᴇʀ˼</a></b>
+    ABOUT_TXT = """<b>✯ Mʏ Nᴀᴍᴇ : {}</b>
 
 <b>✯ Cʀᴇᴀᴛᴏʀ : <a href=https://t.me/kunal_nagar_01>𒆜 𝖪ᴜɴᴀʟ ࿐</a></b>
 
