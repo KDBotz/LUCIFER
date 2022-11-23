@@ -46,6 +46,7 @@ class Bot(Client):
         temp.ME = me.id
         temp.U_NAME = me.username
         temp.B_NAME = me.first_name
+        temp.B_LINK = me.mention
         self.username = '@' + me.username
         curr = datetime.now(timezone(TIMEZONE))
         date = curr.strftime('%d %B, %Y')
@@ -54,7 +55,7 @@ class Bot(Client):
         logging.info(LOG_STR)
         if LOG_CHANNEL:
             try:
-                await self.send_message(LOG_CHANNEL, text=f"<b>Bᴏᴛ Rᴇsᴛᴀʀᴛᴇᴅ !!\n\n📅 Dᴀᴛᴇ : <code>{date}</code>\n⏰ Tɪᴍᴇ : <code>{time}</code>\n🌐 Tɪᴍᴇᴢᴏɴᴇ : <code>{TIMEZONE}</code>\n\n🉐 Vᴇʀsɪᴏɴ : <code>v{__version__}</code></b>")
+                await self.send_message(LOG_CHANNEL, text=f"<b>{me.mention} Rᴇsᴛᴀʀᴛᴇᴅ !!\n\n📅 Dᴀᴛᴇ : <code>{date}</code>\n⏰ Tɪᴍᴇ : <code>{time}</code>\n🌐 Tɪᴍᴇᴢᴏɴᴇ : <code>{TIMEZONE}</code>\n\n🉐 Vᴇʀsɪᴏɴ : <code>v{__version__}</code></b>")
             except Unauthorized:
                 LOGGER.warning("Bot isn't able to send message to LOG_CHANNEL")
             except BadRequest as e:
