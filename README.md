@@ -12,6 +12,8 @@
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/kdbotz/LUCIFER)
 
+#TG Bot [@Filter_Lucifer_Bot](t.me/filter_lucifer_bot)
+
 # Admin Commands
 • /logs - ᴛᴏ ɢᴇᴛ ᴛʜᴇ ʀᴇᴄᴇɴᴛ ᴇʀʀᴏʀꜱ.
 
