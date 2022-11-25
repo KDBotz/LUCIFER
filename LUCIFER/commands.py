@@ -651,20 +651,28 @@ async def send_msg(bot, message):
     if message.reply_to_message:
         target_id = message.text
         command = ["/usend"]
+        out = "Users Saved In DB Are:\n\n"
         for cmd in command:
             if cmd in target_id:
                 target_id = target_id.replace(cmd, "")
         success = False
         try:
-            user = await bot.get_users(int(target_id))
-            await message.reply_to_message.copy(int(user.id))
-            success = True
+            user = await bot.get_users(target_id)
+            users = await db.get_all_users()
+            async for usr in users:
+                out += f"{usr['id']}"
+                out += '\n'
+            if str(user.id) in str(out):
+                await message.reply_to_message.copy(int(user.id))
+                success = True
+            else:
+                success = False
+            if success:
+                await message.reply_text(f"<b>Yᴏᴜʀ Mᴇssᴀɢᴇ Hᴀs Bᴇᴇɴ Sᴜᴄᴇssғᴜʟʟʏ Sᴇɴᴅ To {user.mention}.</b>")
+            else:
+                await message.reply_text("<b>Aɴ Eʀʀᴏʀ Oᴄᴄᴜʀʀᴇᴅ !</b>")
         except Exception as e:
             await message.reply_text(f"<b>Eʀʀᴏʀ :- <code>{e}</code></b>")
-        if success:
-            await message.reply_text(f"<b>Yᴏᴜʀ Mᴇssᴀɢᴇ Hᴀs Bᴇᴇɴ Sᴜᴄᴇssғᴜʟʟʏ Sᴇɴᴅ To {user.mention}.</b>")
-        else:
-            await message.reply_text("<b>Aɴ Eʀʀᴏʀ Oᴄᴄᴜʀʀᴇᴅ !</b>")
     else:
         await message.reply_text("<b>Cᴏᴍᴍᴀɴᴅ Iɴᴄᴏᴍᴘʟᴇᴛᴇ...</b>")
 
@@ -673,19 +681,27 @@ async def send_chatmsg(bot, message):
     if message.reply_to_message:
         target_id = message.text
         command = ["/gsend"]
+        out = "Chats Saved In DB Are:\n\n"
         for cmd in command:
             if cmd in target_id:
                 target_id = target_id.replace(cmd, "")
         success = False
         try:
-            chat = await bot.get_chat(int(target_id))
-            await message.reply_to_message.copy(int(chat.id))
-            success = True
+            user = await bot.get_chat(target_id)
+            users = await db.get_all_chats()
+            async for cht in chats:
+                out += f"{cht['id']}"
+                out += '\n'
+            if str(chat.id) in str(out):
+                await message.reply_to_message.copy(int(chat.id))
+                success = True
+            else:
+                success = False
+            if success:
+                await message.reply_text(f"<b>Yᴏᴜʀ Mᴇssᴀɢᴇ Hᴀs Bᴇᴇɴ Sᴜᴄᴇssғᴜʟʟʏ Sᴇɴᴅ To <code>{chat.id}</code>.</b>")
+            else:
+                await message.reply_text("<b>Aɴ Eʀʀᴏʀ Oᴄᴄᴜʀʀᴇᴅ !</b>")
         except Exception as e:
             await message.reply_text(f"<b>Eʀʀᴏʀ :- <code>{e}</code></b>")
-        if success:
-            await message.reply_text(f"<b>Yᴏᴜʀ Mᴇssᴀɢᴇ Hᴀs Bᴇᴇɴ Sᴜᴄᴇssғᴜʟʟʏ Sᴇɴᴅ To {chat.id}.</b>")
-        else:
-            await message.reply_text("<b>Aɴ Eʀʀᴏʀ Oᴄᴄᴜʀʀᴇᴅ !</b>")
     else:
         await message.reply_text("<b>Cᴏᴍᴍᴀɴᴅ Iɴᴄᴏᴍᴘʟᴇᴛᴇ...</b>")
