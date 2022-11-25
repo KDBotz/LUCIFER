@@ -390,12 +390,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             alert = alert.replace("\\n", "\n").replace("\\t", "\t")
             await query.answer(alert, show_alert=True)
     if query.data.startswith("file"):
-        clicked = query.from_user.id
-        try:
-            typed = query.message.reply_to_message.from_user.id
-        except:
-            typed = query.from_user.id
-        ident, file_id = query.data.split("#")
+        ident, file_id, qry = query.data.split("#")
+        if int(qry) not in [query.from_user.id, 0]:
+            return await query.answer(script.ALRT_TXT, show_alert=True)
         files_ = await get_file_details(file_id)
         if not files_:
             return await query.answer('No such file exist.')
@@ -420,27 +417,21 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
                 return
             elif settings['botpm']:
-                if clicked == typed:
-                    await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
-                    return
-                else:
-                    await query.answer(script.ALRT_TXT, show_alert=True)
+                await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
+                return
             else:
-                if clicked == typed:
-                    mh = await client.send_cached_media(
-                        chat_id=FILE_CHANNEL,
-                        file_id=file_id,
-                        caption=script.FILE_CHANNEL_TXT.format(title, size, query.from_user.mention, query.message.chat.title),
-                        protect_content=True if ident == "filep" else False,
-                        reply_markup=InlineKeyboardMarkup(
-                            [[
-                              InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url=GRP_LNK),
-                              InlineKeyboardButton('Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ', url=CHNL_LNK)
-                            ]]
-                        )
+                mh = await client.send_cached_media(
+                    chat_id=FILE_CHANNEL,
+                    file_id=file_id,
+                    caption=script.FILE_CHANNEL_TXT.format(title, size, query.from_user.mention, query.message.chat.title),
+                    protect_content=True if ident == "filep" else False,
+                    reply_markup=InlineKeyboardMarkup(
+                        [[
+                          InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url=GRP_LNK),
+                          InlineKeyboardButton('Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ', url=CHNL_LNK)
+                        ]]
                     )
-                else:
-                    await query.answer(script.ALRT_TXT, show_alert=True)
+                )
                 mh8 = await query.message.reply(script.FILE_READY_TXT.format(query.from_user.mention, title, size),
                 True,
                 enums.ParseMode.HTML,
