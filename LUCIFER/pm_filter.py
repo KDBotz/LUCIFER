@@ -390,9 +390,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             alert = alert.replace("\\n", "\n").replace("\\t", "\t")
             await query.answer(alert, show_alert=True)
     if query.data.startswith("file"):
-        ident, file_id, rid = query.data.split("#")
-        if int(rid) not in [query.from_user.id, 0]:
-            return await query.answer(script.ALRT_TXT, show_alert=True)
+        ident, file_id = query.data.split("#")
         files_ = await get_file_details(file_id)
         if not files_:
             return await query.answer('No such file exist.')
