@@ -931,7 +931,7 @@ async def auto_filter(client, msg, spoll=False):
         message = msg.message.reply_to_message  # msg will be callback query
         search, files, offset, total_results = spoll
     pre = 'filep' if settings['file_secure'] else 'file'
-    qry = message.from_user.id if message.from_user else 0
+    req = message.from_user.id if message.from_user else 0
     if settings["button"] and msg.chat.id not in filters.chat(chats=SUPPORT_GROUP):
         btn = [
             [
