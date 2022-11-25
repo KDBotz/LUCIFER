@@ -687,8 +687,8 @@ async def send_chatmsg(bot, message):
                 target_id = target_id.replace(cmd, "")
         success = False
         try:
-            user = await bot.get_chat(target_id)
-            users = await db.get_all_chats()
+            chat = await bot.get_chat(target_id)
+            chats = await db.get_all_chats()
             async for cht in chats:
                 out += f"{cht['id']}"
                 out += '\n'
