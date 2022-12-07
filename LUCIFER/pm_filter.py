@@ -434,7 +434,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 mh = await client.send_cached_media(
                     chat_id=FILE_CHANNEL,
                     file_id=file_id,
-                    caption=script.FILE_CHANNEL_TXT.format(title, size, query.from_user.mention, query.message.chat.title),
+                    caption=script.FILE_CHANNEL_TXT.format(title, size, query.from_user.mention, query.message.chat.title, temp.U_NAME),
                     protect_content=True if ident == "filep" else False,
                     reply_markup=InlineKeyboardMarkup(
                         [[
