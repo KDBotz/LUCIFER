@@ -1,47 +1,45 @@
-## ──「 Lᴜᴄɪғᴇʀ 」──
 
 <p align="center">
-  <img src="https://telegra.ph/file/705593c3ae56831c8e565.jpg" alt="LUCIFER Logo">
+    <a href="https://github.com/KDBotz/LUCIFER">
+        <kbd>
+            <img width="250" src="https://telegra.ph/file/292d14a59bebb0cbdd2ff.jpg" alt="LUCIFER">
+        </kbd>
+    </a>
 </p>
-<h1 align="center">
-  <b>LUCIFER</b>
-</h1>
+
+<h2 align="center">
+  <b>──「 ʟᴜᴄɪғᴇʀ 」──</b>
+</h2>
 
 ![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=KD_BOTZ+MOVIE+SEARCH+BOT+!;CREATED+BY+KD_BOTZ+TEAM!;A+ADVANCE+BOT+WITH+COOL+FEATURES!)
 </p>
 
  ━━━━━━━━━━━━━━━━━━━━
-## ᴀᴠᴀɪʟᴀʙʟᴇ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ ᴀs [Lᴜᴄɪғᴇʀ](t.me/filter_lucifer_bot)
- ━━━━━━━━━━━━━━━━━━━━
+## ᴀᴠᴀɪʟᴀʙʟᴇ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ ᴀs [ʟᴜᴄɪғᴇʀ](t.me/filter_lucifer_bot)
 
-## Features
-
-- [x] Auto Filter
-- [x] Manual Filter
-- [x] IMDB
-- [x] Admin Commands
-- [x] Broadcast
-- [x] Group Broadcast
-- [x] Index
-- [x] IMDB search
-- [x] Inline Search
-- [x] Random pics
-- [x] ids and User info 
-- [x] Stats, Users, Chats, Ban, Unban, Leave, Disable, Channel
-- [x] Spelling Check Feature
-- [x] File Store
-- [x] Auto Filter Start & Channel Send Mod
-- [x] Auto Filter Disable/Enable Feature
-- [x] Auto Filter Auto-Delete Disable/Enable Feature
-- [x] Manual Filter Auto-Delete Disable/Enable Feature
-- [x] Global Filters Feature
-- [x] Support Group Filters
-- [x] Support Group #request Feature
-- [x] Send Messages To A Particular Chat/User
+<p align="center">
+<a href="https://github.com/kdbotz/Lucifer/stargazers"><img src="https://img.shields.io/github/stars/kdbotz/Lucifer?color=black&logo=github&logoColor=black&style=for-the-badge" alt="Stars" /></a>
+<a href="https://github.com/kdbotz/Lucifer/network/members"> <img src="https://img.shields.io/github/forks/KDBotz/Lucifer?color=black&logo=github&logoColor=black&style=for-the-badge" /></a>
+<a href="https://github.com/kdbotz/Lucifer/blob/master/LICENSE"> <img src="https://img.shields.io/badge/License- GPL 2.0 license -blueviolet?style=for-the-badge" alt="License" /> </a>
+<a href="https://www.python.org/"> <img src="https://img.shields.io/badge/Written%20in-Python-skyblue?style=for-the-badge&logo=python" alt="Python" /> </a>
+<a href="https://pypi.org/project/Pyrogram/"> <img src="https://img.shields.io/pypi/v/pyrogram?color=white&label=pyrogram&logo=python&logoColor=blue&style=for-the-badge" /></a>
+<a href="https://github.com/kdbotz/Lucifer"> <img src="https://img.shields.io/github/repo-size/kdbotz/Lucifer?color=skyblue&logo=github&logoColor=blue&style=for-the-badge" /></a>
+<a href="https://github.com/kdbotz/Lucifer/commits/kdbotz"> <img src="https://img.shields.io/github/last-commit/kdbotz/Lucifer?color=black&logo=github&logoColor=black&style=for-the-badge" /></a>
+</p>
 
 
-## Credits 
-* [![EvaMaria-Devs](https://img.shields.io/static/v1?label=EvaMaria&message=devs&color=critical)](https://telegram.dog/EvaMariaDevs)
-* [![Kunal](https://img.shields.io/static/v1?label=Kunal&message=Github&color=critical)](https://github.com/kdbotz)
-* [![Contact](https://img.shields.io/static/v1?label=Contact+Developer&message=On+Telegram&color=critical)](https://telegram.me/x_kunal_01)
+## [ʟᴜᴄɪғᴇʀ ғᴇᴀᴛᴜʀᴇs](https://github.com/KDBotz/LUCIFER/wiki#features)
+
+
+
+<h3 align="center">
+    ─「 ᴄʀᴇᴅɪᴛs 」─
+</h3>
+
+- <b>[ᴋᴜɴᴀʟ](https://github.com/KDBOTZ)  ➻  [sᴏᴍᴇᴛʜɪɴɢ](https://github.com/KDBOTZ/LUCIFER) </b>
+- <b>[ᴇᴠᴀᴍᴀʀɪᴀ](https://github.com/EVAMARIATG)  ➻  [ʙᴀsᴇ ᴄᴏᴅᴇ](https://github.com/EVAMARIATG/EVAMARIA) </b>
+ 
+<b>ᴀɴᴅ ᴀʟʟ [ᴛʜᴇ ᴄᴏɴᴛʀɪʙᴜᴛᴏʀs](https://github.com/KDBotz/LUCIFER/graphs/contributors) ᴡʜᴏ ʜᴇʟᴩᴇᴅ ɪɴ ᴍᴀᴋɪɴɢ ʟᴜᴄɪғᴇʀ ᴜsᴇғᴜʟ & ᴩᴏᴡᴇʀғᴜʟ 🖤 </b>
+
+━━━━━━━━━━━━━━━━━━━━
 
