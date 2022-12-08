@@ -1,4 +1,4 @@
-# LUCIFER
+## ──「 Lᴜᴄɪғᴇʀ 」──
 
 <p align="center">
   <img src="https://telegra.ph/file/705593c3ae56831c8e565.jpg" alt="LUCIFER Logo">
@@ -10,7 +10,9 @@
 ![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=KD_BOTZ+MOVIE+SEARCH+BOT+!;CREATED+BY+KD_BOTZ+TEAM!;A+ADVANCE+BOT+WITH+COOL+FEATURES!)
 </p>
 
-## TG Bot [@Filter_Lucifer_Bot](t.me/filter_lucifer_bot)
+ ━━━━━━━━━━━━━━━━━━━━
+## ᴀᴠᴀɪʟᴀʙʟᴇ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ ᴀs [Lᴜᴄɪғᴇʀ](t.me/filter_lucifer_bot)
+ ━━━━━━━━━━━━━━━━━━━━
 
 ## Features
 
