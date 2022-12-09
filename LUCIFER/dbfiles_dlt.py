@@ -1,3 +1,5 @@
+# Separate channel to be created and bot to be added as admin. when the file forwarded to the this channel, then the file will be deleted from database. (This will help to eliminate time while delete file by forward file to bot and reply /delete command each time for each file)
+import re
 import logging
 from pyrogram import Client, filters
 from info import FILDLT_CNL
