@@ -1230,7 +1230,7 @@ async def advantage_spell_chok(msg):
         reply_markup=InlineKeyboardMarkup(btn)
     )
     await asyncio.sleep(3)
-    await spl1.edit_reply_markup(
+    await spl1.edit("<b>I Cᴏᴜʟᴅɴ'ᴛ Fɪɴᴅ Aɴʏᴛʜɪɴɢ Rᴇʟᴀᴛᴇᴅ ᴛᴏ Tʜᴀᴛ\nDɪᴅ Yᴏᴜ Mᴇᴀɴ Aɴʏ Oɴᴇ ᴏғ Tʜᴇsᴇ ?</b>",
         reply_markup=InlineKeyboardMarkup(btn2)
     )
     await asyncio.sleep(SPL_DELETE_TIME)
