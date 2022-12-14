@@ -42,7 +42,8 @@ async def pv_filter(client, message):
 
 @Client.on_message(filters.group & filters.text & filters.incoming & filters.chat(AUTH_GROUPS) if AUTH_GROUPS else filters.group & filters.text & filters.incoming)
 async def give_filter(client, message):
-    await global_filters(client, message)
+    if message.chat.id != SUPPORT_GROUP:
+        await global_filters(client, message)
     mf = await manual_filters(client, message)
     if mf == False:
         settings = await get_settings(message.chat.id)
@@ -1224,7 +1225,7 @@ async def advantage_spell_chok(msg):
         caption=(script.CUDNT_FND),
         reply_markup=InlineKeyboardMarkup(btn)
     )
-    await asyncio.sleep(3)
+    await asyncio.sleep(5)
     await spl1.edit("<b>I Cᴏᴜʟᴅɴ'ᴛ Fɪɴᴅ Aɴʏᴛʜɪɴɢ Rᴇʟᴀᴛᴇᴅ ᴛᴏ Tʜᴀᴛ\nDɪᴅ Yᴏᴜ Mᴇᴀɴ Aɴʏ Oɴᴇ ᴏғ Tʜᴇsᴇ ?</b>",
         reply_markup=InlineKeyboardMarkup(btn2)
     )
