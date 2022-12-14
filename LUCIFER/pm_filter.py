@@ -197,8 +197,6 @@ async def advantage_spoll_choker(bot, query):
         else:
             k = await query.message.edit(script.MVE_NT_FND,
                     reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Rᴇǫᴜᴇsᴛ ʜᴇʀᴇ", url=f"t.me/{SUPPORT_CHAT}")]])
-            await asyncio.sleep(10)
-            await k.delete()
 
 @Client.on_callback_query()
 async def cb_handler(client: Client, query: CallbackQuery):
