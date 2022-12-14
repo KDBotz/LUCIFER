@@ -195,8 +195,7 @@ async def advantage_spoll_choker(bot, query):
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-            k = await query.message.edit(script.MVE_NT_FND,
-                    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Rᴇǫᴜᴇsᴛ ʜᴇʀᴇ", url=f"t.me/{SUPPORT_CHAT}")]])
+            k = await query.message.edit(script.MVE_NT_FND)
 
 @Client.on_callback_query()
 async def cb_handler(client: Client, query: CallbackQuery):
