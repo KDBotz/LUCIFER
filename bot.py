@@ -48,6 +48,7 @@ class Bot(Client):
         temp.B_NAME = me.first_name
         temp.B_LINK = me.mention
         self.username = '@' + me.username
+        self.uptime = datetime.now()
         curr = datetime.now(timezone(TIMEZONE))
         date = curr.strftime('%d %B, %Y')
         time = curr.strftime('%I:%M:%S %p')
