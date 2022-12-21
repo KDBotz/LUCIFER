@@ -38,7 +38,7 @@
 <h3 align="center">
     ─「 ᴅᴇᴩʟᴏʏ ᴏɴ ᴋᴏʏᴇʙ 」─
 </h3>
-<p align="center"><a href="https://app.koyeb.com/deploy?type=git&repository=github.com/KDBotz/LUCIFER&branch=koyeb&name=LUCIFER">
+<p align="center"><a href="https://app.koyeb.com/deploy?type=git&repository=github.com/KDBotz/LUCIFER&branch=main&name=LUCIFER">
   <img src="https://www.koyeb.com/static/images/deploy/button.svg" alt="Deploy On Koyeb">
 </a></p>
 
