@@ -2,6 +2,7 @@ from pyrogram import filters, Client, enums
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from database.connections_mdb import add_connection, all_connections, if_active, delete_connection
 from info import ADMINS
+from utils import temp
 import logging
 
 logger = logging.getLogger(__name__)
@@ -56,26 +57,31 @@ async def addconnection(client, message):
             addcon = await add_connection(str(group_id), str(userid))
             if addcon:
                 await message.reply_text(
-                    f"Successfully connected to **{title}**\nNow manage your group from my pm !",
+                    f"**Sᴜᴄᴄᴇssғᴜʟʟʏ Cᴏɴɴᴇᴄᴛᴇᴅ ᴛᴏ {title}**\n**Nᴏᴡ Mᴀɴᴀɢᴇ Yᴏᴜʀ Gʀᴏᴜᴘ Fʀᴏᴍ Mʏ PM !**",
                     quote=True,
+                    reply_markup=InlineKeyboardMarkup(
+                                           [[
+                                             InlineKeyboardButton('ɢᴏ ᴛᴏ ᴘᴍ', url=f"https://t.me/{temp.U_NAME}")
+                                           ]]
+                    ),
                     parse_mode=enums.ParseMode.MARKDOWN
                 )
                 if chat_type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
                     await client.send_message(
                         userid,
-                        f"Connected to **{title}** !",
+                        f"Cᴏɴɴᴇᴄᴛᴇᴅ ᴛᴏ **{title}** !",
                         parse_mode=enums.ParseMode.MARKDOWN
                     )
             else:
                 await message.reply_text(
-                    "You're already connected to this chat!",
+                    "**𝚈𝙾𝚄'𝚁𝙴 𝙰𝙻𝚁𝙴𝙰𝙳𝚈 𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙴𝙳 𝚃𝙾 𝚃𝙷𝙸𝚂 𝙶𝚁𝙾𝚄𝙿 !**",
                     quote=True
                 )
         else:
-            await message.reply_text("Add me as an admin in group", quote=True)
+            await message.reply_text("Aᴅᴅ ᴍᴇ ᴀs ᴀɴ Aᴅᴍɪɴ ɪɴ Gʀᴏᴜᴘ.", quote=True)
     except Exception as e:
         logger.exception(e)
-        await message.reply_text('Some error occurred! Try again later.', quote=True)
+        await message.reply_text('Sᴏᴍᴇ Eʀʀᴏʀ Oᴄᴄᴜʀʀᴇᴅ! Tʀʏ Aɢᴀɪɴ Lᴀᴛᴇʀ.', quote=True)
         return
 
 
