@@ -649,12 +649,8 @@ async def ping(_, message):
 @Client.on_message(filters.command("usend") & filters.user(ADMINS))
 async def send_msg(bot, message):
     if message.reply_to_message:
-        target_id = message.text
-        command = ["/usend"]
+        target_id = message.text.split(" ", 1)[1]
         out = "Users Saved In DB Are:\n\n"
-        for cmd in command:
-            if cmd in target_id:
-                target_id = target_id.replace(cmd, "")
         success = False
         try:
             user = await bot.get_users(target_id)
@@ -679,12 +675,8 @@ async def send_msg(bot, message):
 @Client.on_message(filters.command("gsend") & filters.user(ADMINS))
 async def send_chatmsg(bot, message):
     if message.reply_to_message:
-        target_id = message.text
-        command = ["/gsend"]
+        target_id = message.text.split(" ", 1)[1]
         out = "Chats Saved In DB Are:\n\n"
-        for cmd in command:
-            if cmd in target_id:
-                target_id = target_id.replace(cmd, "")
         success = False
         try:
             chat = await bot.get_chat(target_id)
